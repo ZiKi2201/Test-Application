@@ -29,6 +29,7 @@ class MyWebViewClient(context: Context) : WebViewClient() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
         view.loadUrl(request.url.toString())
+        save("URL",request.url.toString())
         return true
     }
 
